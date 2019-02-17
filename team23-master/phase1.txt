@@ -1,0 +1,35 @@
+# team23 phase1.txt
+
+# INSTALLATION
+$ cd event-site
+$ npm install
+$ npm start
+navigate to 'localhost:3000' in Chrome. Alternatively, navigate to 'https://test-project-mcamskdmior.appspot.com/'
+
+# CREDENTIALS
+- Regular User
+    Username: johnsmith
+    Password: password123
+- Administrator
+    Username: admin
+    Password: adminPassword
+
+# FEATURES and USAGE
+We will outline features and usage with respect to the three possible authentication states:
+1. Unauthenticated
+    - The user may browse all posts via the home page.
+    - The user can browse the posts of a particular topic.
+    - The user can login to an existing account or create a new account.
+2. Authenticated
+    - The user may browse all subscriptions via the home page.
+    - The user may browse all posts of a particular topic.
+    - The user may add a discussion/event post to a topic (via the topic page - not the homepage).
+    - The user may comment on a discussion/event post.
+    - The user may subscribe/unsubscribe to topics. Subscriptions will appear on the home page. Initially, a user will have no subscriptions, and the home page will be empty.
+    - The user may view and edit their own profile information (click the profile icon in the top right, then 'Profile')
+3. Administrator
+    - The administrator can do everything that a regular user can, but will have access to the dashboard.
+    - To access the dashboard, click the icon in the top right corner, then click Dashboard.
+    - Via the dashboard, the administrator can view all users on the site, change their name, and change their password.
+    - Via the dashboard, the administrator can view all posts on the site, change each post's details, and delete comments.
+    - Via the dashboard, the administrator can view the basic stats of the site.

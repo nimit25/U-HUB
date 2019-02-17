@@ -1,0 +1,91 @@
+# team23 phase2.txt
+# U-HUB
+# CREDENTIALS
+- Regular User
+    Username: username
+    Password: 123456
+- Administrator
+    Username: admin
+    Password: 123456
+
+# FEATURES and USAGE
+We will outline features and usage with respect to the two possible authentication states:
+1. User
+    - The user may browse all subscriptions via the home page.
+    - The user can see their upcoming events and U-HUB's popular topics.
+    - The user may browse all posts of a particular topic.
+    - The user may add a discussion/event post to a topic (via the topic page - not the homepage).
+    - The user may comment on a discussion/event post.
+    - The user may like and dislike a comment
+    - The user may see who liked and disliked a comment
+    - The user may subscribe/unsubscribe to topics. Subscriptions will appear on the home page. Initially, a user will have no subscriptions, and the home page will be empty.
+    - The user may view and edit their own profile information (click the profile icon in the top right, then 'Profile')
+2. Administrator
+    - The administrator can do everything that a regular user can, but will have access to the dashboard.
+    - To access the dashboard, click the icon in the top right corner, then click Dashboard.
+    - Via the dashboard, the administrator can view all users on the site, change their name, and change their password.
+    - Via the dashboard, the administrator can view all posts on the site, change each post's details, and delete comments.
+    - Via the dashboard, the administrator can view the basic stats of the site.
+
+# ADMIN ROUTES (server/api/admin/index.js)
+- These routes are called when the admin edits data on their dashboard.
+- Methods:
+    1) Get a user
+    2) Update a user's attributes
+    3) Update a post's attributes
+    4) Delete a post
+    5) Delete a comment
+    6) Get all posts
+    7) Get the stats
+
+# AUTHENTICATION ROUTES (server/api/auth/index.js)
+- These routes are called to authenticate a user's login credentials/to sign up a new user
+- Methods:
+    1) Get's a user's authentication status
+    2) Authenticate's a user and returns a token
+    3) Destroy's a session after a user log's out
+    4) Creates a new user
+
+# COMMENT ROUTES (server/api/comment/index.js)
+- These routes handle everything to do with comments
+- Methods:
+    1) Get a comment
+    2) Add a like to a comment
+    3) Remove a like from a comment
+    4) Add a dislike to a comment
+    5) Remove a dislike from a comment
+
+# POST ROUTES (server/api/post/index.js)
+- These routes handle everything to do with event and discussion posts
+- Methods:
+    1) Get a user's upcoming events
+    2) Get a post
+    3) Create a post
+    4) Update a post
+    5) Add a user to the list of users that are going to an event
+    6) Remove a user to the list of users that are going to an event
+    7) Add a comment to the given post
+    8) Delete a comment from the given post
+    9) Get all comments of the given post
+
+# PROFILE ROUTES (server/api/profile/index.js)
+- These routes handle changes made in the profile page
+- Methods:
+    1) Get a user
+    2) Update a user's properties
+
+# TOPIC ROUTES (server/api/topic/index.js)
+- These routes handle everything to do with topics
+- Methods:
+    1) Get the most popular topics
+    2) Get all posts of topics that a users is subscribed to
+    3) Get all posts
+    4) Get all posts of a given topic
+    5) Subscribe a user to a topic
+    6) Unsubscribe a user from a topic
+
+# USER ROUTES (server/api/user/index.js)
+- These routes handle getting users and updating their posts once they create a new post
+- Methods:
+    1) Get a user
+    2) Add a post's title to the users posts property
